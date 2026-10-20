@@ -16,26 +16,102 @@
   padding: 32px;
 
   &__small-quote {
-    color: variables.$color-white;
-
     @include mixins.preset-1;
   }
 
   &__large-quote {
-    color: variables.$color-purple50;
-
     @include mixins.preset-3;
   }
 }
 
 .one {
-  border: 2px solid variables.$color-purple300;
   background-color: variables.$color-purple500;
+
+  &__status {
+    color: variables.$color-purple50;
+  }
+
+  &__photo {
+    border: 2px solid variables.$color-purple300;
+  }
+
+  &__small-quote,
+  &__name {
+    color: variables.$color-white;
+  }
+
+  &__large-quote {
+    color: variables.$color-purple50;
+  }
 }
 
 .two {
   background-color: variables.$color-grey500;
-  border: none;
+
+  &__name,
+  &__small-quote {
+    color: variables.$color-white;
+  }
+
+  &__status {
+    color: variables.$color-grey300;
+  }
+
+  &__large-quote {
+    color: variables.$color-grey100;
+  }
+}
+
+.three {
+  background-color: variables.$color-white;
+
+  &__name,
+  &__small-quote {
+    color: variables.$color-grey500;
+  }
+
+  &__status,
+  &__large-quote {
+    color: variables.$color-grey400;
+  }
+}
+
+.four {
+  background-color: variables.$color-dark-blue;
+
+  &__photo {
+    border: 2px solid variables.$color-purple500;
+  }
+
+  &__name,
+  &__status {
+    color: variables.$color-white;
+  }
+
+  &__small-quote {
+    color: variables.$color-grey200;
+  }
+
+  &__large-quote {
+    color: variables.$color-grey100;
+  }
+}
+
+.five {
+  background-color: variables.$color-white;
+
+  &__name,
+  &__small-quote {
+    color: variables.$color-grey500;
+  }
+
+  &__status {
+    color: variables.$color-grey300;
+  }
+
+  &__large-quote {
+    color: variables.$color-grey400;
+  }
 }
 
 .person {
@@ -56,14 +132,10 @@
   }
 
   &__name {
-    color: variables.$color-white;
-
     @include mixins.preset-2;
   }
 
   &__status {
-    color: variables.$color-white;
-
     @include mixins.preset-4;
   }
 }

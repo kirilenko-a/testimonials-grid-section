@@ -24,14 +24,12 @@ p, body, blockquote {
   padding: 32px;
 }
 .testimonial__small-quote {
-  color: #FFF;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 120%;
 }
 .testimonial__large-quote {
-  color: #EDE4FF;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 13px;
   font-weight: 500;
@@ -39,13 +37,71 @@ p, body, blockquote {
 }
 
 .one {
-  border: 2px solid #A775F1;
   background-color: #733FC8;
+}
+.one__status {
+  color: #EDE4FF;
+}
+.one__photo {
+  border: 2px solid #A775F1;
+}
+.one__small-quote, .one__name {
+  color: #FFF;
+}
+.one__large-quote {
+  color: #EDE4FF;
 }
 
 .two {
   background-color: #48556A;
-  border: none;
+}
+.two__name, .two__small-quote {
+  color: #FFF;
+}
+.two__status {
+  color: #A4AAB3;
+}
+.two__large-quote {
+  color: #E7EAEE;
+}
+
+.three {
+  background-color: #FFF;
+}
+.three__name, .three__small-quote {
+  color: #48556A;
+}
+.three__status, .three__large-quote {
+  color: #676D7E;
+}
+
+.four {
+  background-color: #19202D;
+}
+.four__photo {
+  border: 2px solid #733FC8;
+}
+.four__name, .four__status {
+  color: #FFF;
+}
+.four__small-quote {
+  color: #CFCFCF;
+}
+.four__large-quote {
+  color: #E7EAEE;
+}
+
+.five {
+  background-color: #FFF;
+}
+.five__name, .five__small-quote {
+  color: #48556A;
+}
+.five__status {
+  color: #A4AAB3;
+}
+.five__large-quote {
+  color: #676D7E;
 }
 
 .person {
@@ -64,14 +120,12 @@ p, body, blockquote {
   gap: 4px;
 }
 .person__name {
-  color: #FFF;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 110%;
 }
 .person__status {
-  color: #FFF;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 11px;
   font-weight: 500;
