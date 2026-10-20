@@ -1,0 +1,81 @@
+/* COLORS */
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3,
+p, body, blockquote {
+  padding: 0;
+  margin: 0;
+  quotes: none;
+}
+
+.main {
+  display: grid;
+  gap: 32px;
+  padding: 73px 35px;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 8px;
+  padding: 32px;
+}
+.testimonial__small-quote {
+  color: #FFF;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 120%;
+}
+.testimonial__large-quote {
+  color: #EDE4FF;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.one {
+  border: 2px solid #A775F1;
+  background-color: #733FC8;
+}
+
+.two {
+  background-color: #48556A;
+  border: none;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.person__photo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.person__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.person__name {
+  color: #FFF;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 110%;
+}
+.person__status {
+  color: #FFF;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 110%;
+}
+
+/*# sourceMappingURL=style.css.map */

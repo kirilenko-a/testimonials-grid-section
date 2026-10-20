@@ -1,3 +1,69 @@
 @use 'variables';
 @use 'mixins';
 @use 'reset';
+
+.main {
+  display: grid;
+  gap: 32px;
+  padding: 73px 35px;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 8px;
+  padding: 32px;
+
+  &__small-quote {
+    color: variables.$color-white;
+
+    @include mixins.preset-1;
+  }
+
+  &__large-quote {
+    color: variables.$color-purple50;
+
+    @include mixins.preset-3;
+  }
+}
+
+.one {
+  border: 2px solid variables.$color-purple300;
+  background-color: variables.$color-purple500;
+}
+
+.two {
+  background-color: variables.$color-grey500;
+  border: none;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  
+  &__photo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__name {
+    color: variables.$color-white;
+
+    @include mixins.preset-2;
+  }
+
+  &__status {
+    color: variables.$color-white;
+
+    @include mixins.preset-4;
+  }
+}

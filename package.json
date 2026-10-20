@@ -1,0 +1,31 @@
+{
+  "name": "testimonials-grid-section",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass styles/scss/style.scss styles/style.css",
+    "sass:watch": "sass --watch styles/scss/style.scss:styles/style.css",
+    "sass:build": "sass styles/scss/style.scss styles/style.css --style=compressed --no-source-map",
+    "lint:scss": "stylelint \"styles/scss/**/*.scss\"",
+    "lint:scss:fix": "stylelint \"styles/scss/**/*.scss\" --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirilenko-a/testimonials-grid-section.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kirilenko-a/testimonials-grid-section/issues"
+  },
+  "homepage": "https://github.com/kirilenko-a/testimonials-grid-section#readme",
+  "devDependencies": {
+    "sass": "^1.105.2",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard-scss": "^17.0.0"
+  }
+}
