@@ -2,10 +2,25 @@
 @use 'mixins';
 @use 'reset';
 
+body {
+  height: 100vh;
+  align-content: center;
+}
+
 .main {
   display: grid;
   gap: 32px;
   padding: 73px 35px;
+
+  @media (width >= 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 83px 60px;
+  }
+
+  @media (width >= 1440px) {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 165px;
+  }
 }
 
 .testimonial {
@@ -14,6 +29,34 @@
   gap: 16px;
   border-radius: 8px;
   padding: 32px;
+  box-shadow: 30px 30px 30px 0 rgb(0 0 0 / 20%);
+
+  .person {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    &__photo {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &__name {
+      @include mixins.preset-2;
+    }
+
+    &__status {
+      @include mixins.preset-4;
+    }
+  }
 
   &__small-quote {
     @include mixins.preset-1;
@@ -22,120 +65,123 @@
   &__large-quote {
     @include mixins.preset-3;
   }
-}
 
-.one {
-  background-color: variables.$color-purple500;
+  &--daniel {
+    position: relative;
+    background-color: variables.$color-purple500;
 
-  &__status {
-    color: variables.$color-purple50;
+    .person__photo {
+      border: 2px solid variables.$color-purple300; 
+    }
+
+    .person__name,
+    .testimonial__small-quote {
+      color: variables.$color-white;
+    }
+
+    .person__status {
+      color: variables.$color-purple50;
+    }
+
+    .testimonial__large-quote {
+      color: variables.$color-purple50;
+    }
+
+    > * {
+      z-index: 1;
+    }
+
+    @media (width >= 768px) {
+      grid-column: span 2;
+
+      &::before {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 167px;
+        width: 104px;
+        height: 102px;
+        background: url('../../images/bg-pattern-quotation.svg') no-repeat center / contain;
+        content: '';
+      }
+    }
+
+    @media (width >= 1440px) {
+      &::before {
+        right: 60px;
+      }
+    }
   }
 
-  &__photo {
-    border: 2px solid variables.$color-purple300;
+  &--jonathan {
+    background-color: variables.$color-grey500;
+
+    .person__name,
+    .testimonial__small-quote {
+      color: variables.$color-white;
+    }
+
+    .person__status {
+      color: variables.$color-grey300;
+    }
+
+    .testimonial__large-quote {
+      color: variables.$color-grey100;
+    }
   }
 
-  &__small-quote,
-  &__name {
-    color: variables.$color-white;
+  &--jeanette,
+  &--kira {
+    background-color: variables.$color-white;
+
+    .person__name,
+    .testimonial__small-quote {
+      color: variables.$color-grey500;
+    }
+
+    .person__status,
+    .testimonial__large-quote {
+      color: variables.$color-grey400;
+    }
   }
 
-  &__large-quote {
-    color: variables.$color-purple50;
-  }
-}
+  &--patrick {
+    background-color: variables.$color-dark-blue;
 
-.two {
-  background-color: variables.$color-grey500;
+    .person__photo {
+      border: 2px solid variables.$color-purple500;
+    }
 
-  &__name,
-  &__small-quote {
-    color: variables.$color-white;
-  }
+    .person__name,
+    .person__status {
+      color: variables.$color-white;
+    }
 
-  &__status {
-    color: variables.$color-grey300;
-  }
+    .testimonial__small-quote {
+      color: variables.$color-grey200;
+    }
 
-  &__large-quote {
-    color: variables.$color-grey100;
-  }
-}
+    .testimonial__large-quote {
+      color: variables.$color-grey100;
+    }
 
-.three {
-  background-color: variables.$color-white;
-
-  &__name,
-  &__small-quote {
-    color: variables.$color-grey500;
+    @media (width >= 768px) {
+      grid-column: span 2;
+    }
   }
 
-  &__status,
-  &__large-quote {
-    color: variables.$color-grey400;
-  }
-}
+  &--kira {
+    .person__status {
+      color: variables.$color-grey300;
+    }
 
-.four {
-  background-color: variables.$color-dark-blue;
+    @media (width >= 768px) {
+      grid-column: span 2;
+    }
 
-  &__photo {
-    border: 2px solid variables.$color-purple500;
-  }
-
-  &__name,
-  &__status {
-    color: variables.$color-white;
-  }
-
-  &__small-quote {
-    color: variables.$color-grey200;
-  }
-
-  &__large-quote {
-    color: variables.$color-grey100;
-  }
-}
-
-.five {
-  background-color: variables.$color-white;
-
-  &__name,
-  &__small-quote {
-    color: variables.$color-grey500;
-  }
-
-  &__status {
-    color: variables.$color-grey300;
-  }
-
-  &__large-quote {
-    color: variables.$color-grey400;
-  }
-}
-
-.person {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-  
-  &__photo {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  &__name {
-    @include mixins.preset-2;
-  }
-
-  &__status {
-    @include mixins.preset-4;
+    @media (width >= 1440px) {
+      grid-column: 4;
+      grid-row: 1 / 3;
+    }
   }
 }

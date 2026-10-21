@@ -10,10 +10,27 @@ p, body, blockquote {
   quotes: none;
 }
 
+body {
+  height: 100vh;
+  align-content: center;
+}
+
 .main {
   display: grid;
   gap: 32px;
   padding: 73px 35px;
+}
+@media (width >= 768px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 83px 60px;
+  }
+}
+@media (width >= 1440px) {
+  .main {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 165px;
+  }
 }
 
 .testimonial {
@@ -22,6 +39,35 @@ p, body, blockquote {
   gap: 16px;
   border-radius: 8px;
   padding: 32px;
+  box-shadow: 30px 30px 30px 0 rgba(0, 0, 0, 0.2);
+}
+.testimonial .person {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.testimonial .person__photo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.testimonial .person__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.testimonial .person__name {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 110%;
+}
+.testimonial .person__status {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 110%;
 }
 .testimonial__small-quote {
   font-family: "Barlow Semi Condensed", sans-serif;
@@ -35,101 +81,106 @@ p, body, blockquote {
   font-weight: 500;
   line-height: 140%;
 }
-
-.one {
+.testimonial--daniel {
+  position: relative;
   background-color: #733FC8;
 }
-.one__status {
-  color: #EDE4FF;
-}
-.one__photo {
+.testimonial--daniel .person__photo {
   border: 2px solid #A775F1;
 }
-.one__small-quote, .one__name {
+.testimonial--daniel .person__name,
+.testimonial--daniel .testimonial__small-quote {
   color: #FFF;
 }
-.one__large-quote {
+.testimonial--daniel .person__status {
   color: #EDE4FF;
 }
-
-.two {
+.testimonial--daniel .testimonial__large-quote {
+  color: #EDE4FF;
+}
+.testimonial--daniel > * {
+  z-index: 1;
+}
+@media (width >= 768px) {
+  .testimonial--daniel {
+    grid-column: span 2;
+  }
+  .testimonial--daniel::before {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 167px;
+    width: 104px;
+    height: 102px;
+    background: url("../../images/bg-pattern-quotation.svg") no-repeat center/contain;
+    content: "";
+  }
+}
+@media (width >= 1440px) {
+  .testimonial--daniel::before {
+    right: 60px;
+  }
+}
+.testimonial--jonathan {
   background-color: #48556A;
 }
-.two__name, .two__small-quote {
+.testimonial--jonathan .person__name,
+.testimonial--jonathan .testimonial__small-quote {
   color: #FFF;
 }
-.two__status {
+.testimonial--jonathan .person__status {
   color: #A4AAB3;
 }
-.two__large-quote {
+.testimonial--jonathan .testimonial__large-quote {
   color: #E7EAEE;
 }
-
-.three {
+.testimonial--jeanette, .testimonial--kira {
   background-color: #FFF;
 }
-.three__name, .three__small-quote {
+.testimonial--jeanette .person__name,
+.testimonial--jeanette .testimonial__small-quote, .testimonial--kira .person__name,
+.testimonial--kira .testimonial__small-quote {
   color: #48556A;
 }
-.three__status, .three__large-quote {
+.testimonial--jeanette .person__status,
+.testimonial--jeanette .testimonial__large-quote, .testimonial--kira .person__status,
+.testimonial--kira .testimonial__large-quote {
   color: #676D7E;
 }
-
-.four {
+.testimonial--patrick {
   background-color: #19202D;
 }
-.four__photo {
+.testimonial--patrick .person__photo {
   border: 2px solid #733FC8;
 }
-.four__name, .four__status {
+.testimonial--patrick .person__name,
+.testimonial--patrick .person__status {
   color: #FFF;
 }
-.four__small-quote {
+.testimonial--patrick .testimonial__small-quote {
   color: #CFCFCF;
 }
-.four__large-quote {
+.testimonial--patrick .testimonial__large-quote {
   color: #E7EAEE;
 }
-
-.five {
-  background-color: #FFF;
+@media (width >= 768px) {
+  .testimonial--patrick {
+    grid-column: span 2;
+  }
 }
-.five__name, .five__small-quote {
-  color: #48556A;
-}
-.five__status {
+.testimonial--kira .person__status {
   color: #A4AAB3;
 }
-.five__large-quote {
-  color: #676D7E;
+@media (width >= 768px) {
+  .testimonial--kira {
+    grid-column: span 2;
+  }
 }
-
-.person {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-}
-.person__photo {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-}
-.person__info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.person__name {
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 110%;
-}
-.person__status {
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 110%;
+@media (width >= 1440px) {
+  .testimonial--kira {
+    grid-column: 4;
+    grid-row: 1/3;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
